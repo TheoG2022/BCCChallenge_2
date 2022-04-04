@@ -110,6 +110,15 @@ def save_qualifying_loans(qualifying_loans):
     """
     # @TODO: Complete the usability dialog for savings the CSV Files.
     # YOUR CODE HERE!
+import csv
+from pathlib import Path
+
+csvpath = Path ("./data/qualifying_loans.csv")
+with open (csvpath, 'w', newline = '') as csvfile:
+        csvwriter = csv.writer(csvfile)
+        for row in save_qualifying_loans:
+            csvwriter.writerow(row)
+
 
 
 def run():
